@@ -1,18 +1,18 @@
 # Fintech--Classification
-Classification models and resampling techniques have been eplored to identify high risk loans in imbalanced data sets. The resampling notebook explores the use of oversampling, undersampling and combination sampling, coupled with a logistic regression model for prediction of loan risk. The ensemble notebook looks at ensemble learning techniques and how they handle imbalanced datasets.
+Classification models and resampling techniques have been used to identify high risk loans in imbalanced data sets. The resampling notebook explores the use of oversampling, undersampling and combination sampling, coupled with a logistic regression model for prediction of loan risk. The ensemble notebook looks at ensemble learning techniques and how they handle imbalanced datasets.
 
 All non, neumerical data was encoded using the sklearn LabelEncoder, the data was then scaled accordingly with sklearn StandardScaler.
 
 ---
 ## Credit risk resampling
 
-Resampling techniques from the imblearn resampling library, were compared using using an imbalanced loanbook. 
+Resampling techniques from the imblearn resampling library, were compared using an imbalanced loanbook. 
 
 ### Oversampling
-Two techniquies were used for oversampling, the first method used a random oversampler for duplication of datapoints as the input to the regression model. The second technique explored was [Synthetic Minority Over-sampling Technique (SMOTE)](https://www.jair.org/index.php/jair/article/view/10302).
+Two techniquies were used for oversampling, the first method used a random oversampler for duplication of datapoints as the input to the regression model. The second technique was [Synthetic Minority Over-sampling Technique (SMOTE)](https://www.jair.org/index.php/jair/article/view/10302).
 
 ### Undersampling
-The undersampling used a Centroid clusters algorthm, which undersamples by computing k-means and replacing the cluster with the central point of the cluster.
+Undersampling used a Centroid clusters algorthm, which undersamples by computing k-means and replacing the cluster with the central point of the cluster.
 
 ### Combination sampling
 The SMOTE combined with Edited Nearest Neighbours (SMOTEENN) was the algorithm of choise for combination resampling as it uses a combination of SMOTE and k-means clustering for over and under sampling.
@@ -21,7 +21,7 @@ The SMOTE combined with Edited Nearest Neighbours (SMOTEENN) was the algorithm o
 ## Comparing sampling methods
 ![table 1](images/table1.png)
 
-The table above (table 1) outlines the metrics for individual logistic regression models built with the sampling techniques. it is evident that there is quite a bit of overlap between the techniques. The oversampling and combination techniques often redulted in a model with very similar performance. All resampling methods resulted in improved performance of the model when compared to the control.
+The table above (table 1) outlines the metrics for logistic regression models built with the sampling techniques. It is evident that there is quite a bit of overlap between the techniques. The oversampling and combination techniques often resulted in a model with very similar performance. All resampling methods had improved performance when compared to the control.
 
 n.b. The random states used for these models have been controlled, slight variance between model performance was observed when random stats were changed.
 
